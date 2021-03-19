@@ -2,6 +2,7 @@
   "name": "atividade-v2",
   "version": "1.0.0",
   "main": "index.js",
+  "author": "Elioenai Ferrari",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
