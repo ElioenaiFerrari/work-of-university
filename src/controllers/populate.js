@@ -40,7 +40,7 @@ class PopulateController {
     }
   }
 
-  async findAll(req, res) {
+  async continents(req, res) {
     try {
       const continentsWithCountries = await Continent.findAll({
         include: [

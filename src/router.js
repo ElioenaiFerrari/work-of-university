@@ -6,7 +6,7 @@ const populateController = new PopulateController();
 
 const populateRouter = () => {
   router.get('/populate', populateController.populate);
-  router.get('/continents', populateController.findAll);
+  router.get('/continents', populateController.continents);
 
   return router;
 };
