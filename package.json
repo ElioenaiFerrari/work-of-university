@@ -16,6 +16,7 @@
     "sequelize-cli": "^6.2.0"
   },
   "scripts": {
-    "start:dev": "nodemon src/main.js"
+    "start:dev": "nodemon src/main.js",
+    "db:setup": "yarn sequelize db:drop && yarn sequelize db:create && yarn sequelize db:migrate"
   }
 }
