@@ -17,7 +17,7 @@ class PopulateController {
 
       const countries = response.data;
 
-      await Promise.all(
+      await Promise.allSettled(
         [...countries].map(async ({ name, region }) => {
           if (!validContinents.includes(region)) {
             return;
@@ -30,7 +30,10 @@ class PopulateController {
           await Country.create({
             continent_id: continent.get('id'),
             name,
-            country_details_url: `https://restcountries.eu/rest/v2/name/${name}`,
+            country_details_url: `https://restcountries.eu/rest/v2/name/${name.replace(
+              / /g,
+              '%20'
+            )}`,
           });
         })
       );
