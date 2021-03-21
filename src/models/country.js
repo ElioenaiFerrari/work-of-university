@@ -5,6 +5,7 @@ class Country extends Model {
     super.init(
       {
         name: DataTypes.STRING,
+        country_details_url: DataTypes.STRING,
       },
       { sequelize }
     );

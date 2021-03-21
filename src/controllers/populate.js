@@ -28,8 +28,9 @@ class PopulateController {
           });
 
           await Country.create({
-            name,
             continent_id: continent.get('id'),
+            name,
+            country_details_url: `https://restcountries.eu/rest/v2/name/${name}`,
           });
         })
       );
