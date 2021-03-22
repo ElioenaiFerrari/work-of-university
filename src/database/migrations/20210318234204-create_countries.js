@@ -15,6 +15,8 @@ module.exports = {
           model: 'continents',
           key: 'id',
         },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
 
       name: {

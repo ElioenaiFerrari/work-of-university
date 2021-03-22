@@ -43,23 +43,6 @@ class PopulateController {
       return res.status(500).json({ message });
     }
   }
-
-  async continents(req, res) {
-    try {
-      const continentsWithCountries = await Continent.findAll({
-        include: [
-          {
-            model: Country,
-            as: 'countries',
-          },
-        ],
-      });
-
-      return res.status(200).json(continentsWithCountries);
-    } catch (error) {
-      return res.status(500).json({ message });
-    }
-  }
 }
 
 module.exports = { PopulateController };

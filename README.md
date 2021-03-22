@@ -8,6 +8,8 @@ _there is no script for production, as it is only for didactic purposes_
 
 the script `yarn db:setup` will help you drop, create and migrate your database
 
+access http://localhost:3000/populate to populate db
+
 Thanks :D
 
 **Follow me :D**
