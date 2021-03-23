@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      li {
+        list-style: none;
+        color: #7159c1;
+        font-size: 24px;
+        font-weight: bold;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        padding: 5px;
+        margin: 5px;
+        width: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul id="list"></ul>
+    </div>
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const response = await fetch('http://localhost:3000/continents');
+      const continents = await response.json();
+
+      const ul = document.querySelector('ul#list');
+
+      [...continents].map((continent) => {
+        const li = document.createElement('li');
+        const h1 = document.createElement('h1');
+        h1.innerText = continent.name;
+        li.appendChild(h1);
+
+        [...continent.countries].map((country) => {
+          const li2 = document.createElement('li');
+          li2.innerText = country.name;
+
+          li.appendChild(li2);
+        });
+
+        ul.appendChild(li);
+      });
+    });
+  </script>
+</html>
